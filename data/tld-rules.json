@@ -1,0 +1,1938 @@
+{
+    "defaults": {
+        "privacy": true,
+        "min_period": 1,
+        "max_period": 10
+    },
+    "tlds": {
+        "us": {
+            "privacy": false,
+            "tld_data": {
+                "group": "nexus",
+                "fields": [
+                    {
+                        "key": "category",
+                        "label": "Nexus category",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "C11": "US citizen",
+                            "C12": "Permanent resident of the US",
+                            "C21": "US-incorporated entity",
+                            "C31": "Foreign entity doing business in the US",
+                            "C32": "Foreign entity with a US office/facility"
+                        }
+                    },
+                    {
+                        "key": "app_purpose",
+                        "label": "Purpose",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "P1": "Business for profit",
+                            "P2": "Non-profit",
+                            "P3": "Personal",
+                            "P4": "Educational",
+                            "P5": "Government"
+                        }
+                    },
+                    {
+                        "key": "validator",
+                        "label": "Country of citizenship",
+                        "required": false,
+                        "type": "country",
+                        "required_if": {
+                            "category": [
+                                "C31",
+                                "C32"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "ca": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "legal_type",
+                        "label": "Legal type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "ABO": "Aboriginal person",
+                            "ASS": "Unincorporated association",
+                            "CCO": "Canadian corporation",
+                            "CCT": "Canadian citizen",
+                            "EDU": "Educational institution",
+                            "GOV": "Government",
+                            "HOP": "Hospital",
+                            "INB": "Indian band",
+                            "LAM": "Library / archive / museum",
+                            "LGR": "Legal representative",
+                            "MAJ": "Her Majesty the Queen",
+                            "OMK": "Official mark holder",
+                            "PLT": "Political party",
+                            "PRT": "Partnership",
+                            "RES": "Permanent resident",
+                            "TDM": "Trademark owner",
+                            "TRD": "Trade union",
+                            "TRS": "Trust"
+                        }
+                    }
+                ]
+            }
+        },
+        "uk": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "IND": "Individual (UK)",
+                            "FIND": "Individual (non-UK)",
+                            "LTD": "UK Limited company",
+                            "PLC": "UK PLC",
+                            "LLP": "UK LLP",
+                            "PTNR": "UK partnership",
+                            "STRA": "Sole trader",
+                            "IP": "Industrial/Provident registered",
+                            "SCH": "School",
+                            "RCHAR": "Registered charity",
+                            "GOV": "Government body",
+                            "CRC": "Corporation by Royal Charter",
+                            "STAT": "Statutory body",
+                            "FCORP": "Foreign corporation",
+                            "OTHER": "UK entity (other)",
+                            "FOTHER": "Non-UK entity (other)"
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company/charity number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "LTD",
+                                "PLC",
+                                "LLP",
+                                "IP",
+                                "SCH",
+                                "RCHAR"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "trading_name",
+                        "label": "Trading name",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "LTD",
+                                "PLC",
+                                "LLP",
+                                "IP",
+                                "RCHAR",
+                                "FCORP",
+                                "OTHER",
+                                "FOTHER",
+                                "STRA"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "eu": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "country_of_citizenship",
+                        "label": "Country of citizenship",
+                        "required": false,
+                        "type": "select",
+                        "options": {
+                            "": "(not required)",
+                            "AT": "Austria",
+                            "BE": "Belgium",
+                            "BG": "Bulgaria",
+                            "CY": "Cyprus",
+                            "CZ": "Czechia",
+                            "DE": "Germany",
+                            "DK": "Denmark",
+                            "EE": "Estonia",
+                            "ES": "Spain",
+                            "FI": "Finland",
+                            "FR": "France",
+                            "GR": "Greece",
+                            "HR": "Croatia",
+                            "HU": "Hungary",
+                            "IE": "Ireland",
+                            "IS": "Iceland",
+                            "IT": "Italy",
+                            "LI": "Liechtenstein",
+                            "LT": "Lithuania",
+                            "LU": "Luxembourg",
+                            "LV": "Latvia",
+                            "MT": "Malta",
+                            "NL": "Netherlands",
+                            "NO": "Norway",
+                            "PL": "Poland",
+                            "PT": "Portugal",
+                            "RO": "Romania",
+                            "SE": "Sweden",
+                            "SI": "Slovenia",
+                            "SK": "Slovakia"
+                        }
+                    }
+                ]
+            }
+        },
+        "de": {
+            "privacy": false
+        },
+        "dk": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "es": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "es_id_type",
+                        "label": "ID type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "Other": "Other",
+                            "NIF": "NIF",
+                            "NIE": "NIE"
+                        }
+                    },
+                    {
+                        "key": "es_id_number",
+                        "label": "ID number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "es_id_type": [
+                                "NIF",
+                                "NIE"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "fr": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "siren_siret",
+                        "label": "SIREN/SIRET",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "trademark_number",
+                        "label": "Trademark number",
+                        "required": false,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "it": {
+            "privacy": false,
+            "tld_data": {
+                "group": "it_registrant_info",
+                "fields": [
+                    {
+                        "key": "entity_type",
+                        "label": "Entity type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "1": "Italian/EU natural person",
+                            "2": "Company/institution",
+                            "3": "Freelance/professional",
+                            "4": "Non-profit",
+                            "5": "Public organization",
+                            "6": "Other",
+                            "7": "Non-EU (matching 2–6)"
+                        }
+                    },
+                    {
+                        "key": "nationality_code",
+                        "label": "Nationality (ISO-2)",
+                        "required": false,
+                        "type": "country"
+                    },
+                    {
+                        "key": "reg_code",
+                        "label": "VAT / Codice Fiscale",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "nl": {
+            "privacy": false
+        },
+        "no": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registration_number",
+                        "label": "Norwegian company register number",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "se": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "nu": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "ru": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "date_of_birth",
+                        "label": "Date of birth (YYYY-MM-DD)",
+                        "required": false,
+                        "type": "date",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID card number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "id_card_authority",
+                        "label": "ID issuing authority",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "id_card_issue_date",
+                        "label": "ID issue date (YYYY-MM-DD)",
+                        "required": false,
+                        "type": "date",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "place_of_birth",
+                        "label": "Place of birth",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "lv": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "com.lv": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "ro": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "com.ro": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "hu": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "co.hu": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "fi": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID card number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "date_of_birth",
+                        "label": "Date of birth (YYYY-MM-DD)",
+                        "required": false,
+                        "type": "date",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "pt": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "tax_number",
+                        "label": "Tax number",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "com.pt": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "tax_number",
+                        "label": "Tax number",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "pm": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "re": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "tf": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "wf": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "yt": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "au": {
+            "privacy": false,
+            "tld_data": {
+                "group": "au_registrant_info",
+                "fields": [
+                    {
+                        "key": "registrant_name",
+                        "label": "Registrant legal name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "registrant_id",
+                        "label": "ABN/ACN",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "registrant_id_type",
+                        "label": "ID type",
+                        "required": false,
+                        "type": "select",
+                        "options": {
+                            "ABN": "ABN",
+                            "ACN": "ACN"
+                        }
+                    },
+                    {
+                        "key": "eligibility_type",
+                        "label": "Eligibility type",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "com.au": {
+            "privacy": false,
+            "tld_data": {
+                "group": "au_registrant_info",
+                "fields": [
+                    {
+                        "key": "registrant_name",
+                        "label": "Registrant legal name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "registrant_id",
+                        "label": "ABN/ACN",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "registrant_id_type",
+                        "label": "ID type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "ABN": "ABN",
+                            "ACN": "ACN"
+                        }
+                    },
+                    {
+                        "key": "eligibility_type",
+                        "label": "Eligibility type",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_name",
+                        "label": "Eligibility name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_id",
+                        "label": "Eligibility ID",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_id_type",
+                        "label": "Eligibility ID type",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "policy_reason",
+                        "label": "Policy reason",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "1": "Exact match",
+                            "2": "Closely connected"
+                        }
+                    }
+                ]
+            }
+        },
+        "net.au": {
+            "privacy": false,
+            "tld_data": {
+                "group": "au_registrant_info",
+                "fields": [
+                    {
+                        "key": "registrant_name",
+                        "label": "Registrant legal name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "registrant_id",
+                        "label": "ABN/ACN",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "registrant_id_type",
+                        "label": "ID type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "ABN": "ABN",
+                            "ACN": "ACN"
+                        }
+                    },
+                    {
+                        "key": "eligibility_type",
+                        "label": "Eligibility type",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_name",
+                        "label": "Eligibility name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_id",
+                        "label": "Eligibility ID",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_id_type",
+                        "label": "Eligibility ID type",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "policy_reason",
+                        "label": "Policy reason",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "1": "Exact match",
+                            "2": "Closely connected"
+                        }
+                    }
+                ]
+            }
+        },
+        "org.au": {
+            "privacy": false,
+            "tld_data": {
+                "group": "au_registrant_info",
+                "fields": [
+                    {
+                        "key": "registrant_name",
+                        "label": "Registrant legal name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_type",
+                        "label": "Eligibility type",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_name",
+                        "label": "Eligibility name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_id",
+                        "label": "Eligibility ID",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_id_type",
+                        "label": "Eligibility ID type",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "policy_reason",
+                        "label": "Policy reason",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "1": "Exact match",
+                            "2": "Closely connected"
+                        }
+                    }
+                ]
+            }
+        },
+        "asn.au": {
+            "privacy": false,
+            "tld_data": {
+                "group": "au_registrant_info",
+                "fields": [
+                    {
+                        "key": "registrant_name",
+                        "label": "Registrant legal name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_type",
+                        "label": "Eligibility type",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_name",
+                        "label": "Eligibility name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_id",
+                        "label": "Eligibility ID",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_id_type",
+                        "label": "Eligibility ID type",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "policy_reason",
+                        "label": "Policy reason",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "1": "Exact match",
+                            "2": "Closely connected"
+                        }
+                    }
+                ]
+            }
+        },
+        "id.au": {
+            "privacy": false,
+            "tld_data": {
+                "group": "au_registrant_info",
+                "fields": [
+                    {
+                        "key": "registrant_name",
+                        "label": "Registrant legal name",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "eligibility_type",
+                        "label": "Eligibility type",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "hk": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Company registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "date_of_birth",
+                        "label": "Date of birth (YYYY-MM-DD)",
+                        "required": false,
+                        "type": "date",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID card number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "my": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID card number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "sg": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID card number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registration_number",
+                        "label": "Registration number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "in": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "identity_number",
+                        "label": "Aadhaar (12 digits, Indian individuals)",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "tax_number",
+                        "label": "PAN (10 chars, Indian individuals)",
+                        "required": false,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "co.in": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "net.in": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "org.in": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "firm.in": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "gen.in": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "ind.in": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "com.br": {
+            "privacy": false,
+            "tld_data": {
+                "group": "br_register_number",
+                "fields": [
+                    {
+                        "key": "br_register_number",
+                        "label": "CNPJ (org) or CPF (individual)",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "com.ar": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID / passport number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "tax_number",
+                        "label": "Tax number",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "cl": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    },
+                    {
+                        "key": "id_card_number",
+                        "label": "ID card number",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "individual"
+                            ]
+                        }
+                    },
+                    {
+                        "key": "registrant_vat_id",
+                        "label": "VAT ID",
+                        "required": false,
+                        "type": "text",
+                        "required_if": {
+                            "registrant_type": [
+                                "organization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "mx": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "com.mx": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "co.za": {
+            "privacy": false,
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "registrant_type",
+                        "label": "Registrant type",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "individual": "Individual",
+                            "organization": "Organization"
+                        }
+                    }
+                ]
+            }
+        },
+        "ie": {
+            "privacy": false,
+            "tld_data": {
+                "group": "ie_cro_number",
+                "fields": [
+                    {
+                        "key": "ie_cro_number",
+                        "label": "Irish CRO number",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "pro": {
+            "tld_data": {
+                "group": "professional_data",
+                "fields": [
+                    {
+                        "key": "profession",
+                        "label": "Profession",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "authority",
+                        "label": "Licensing authority",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "authority_website",
+                        "label": "Authority website",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "license_number",
+                        "label": "License number",
+                        "required": false,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "travel": {
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "travel_uin",
+                        "label": "Travel UIN",
+                        "required": false,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "aero": {
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "aero_ens_id",
+                        "label": "AERO ENS ID",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "aero_ens_password",
+                        "label": "AERO ENS password",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "coop": {
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "coop_verification_code",
+                        "label": "Co-op verification code",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "jobs": {
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "jobs_website",
+                        "label": "Website",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "jobs_admin_type",
+                        "label": "HR/admin manager?",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "Yes": "Yes",
+                            "No": "No"
+                        }
+                    },
+                    {
+                        "key": "jobs_association_member",
+                        "label": "SHRM/association member?",
+                        "required": true,
+                        "type": "select",
+                        "options": {
+                            "Yes": "Yes",
+                            "No": "No"
+                        }
+                    },
+                    {
+                        "key": "jobs_industry_type",
+                        "label": "Industry",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "jobs_title",
+                        "label": "Title",
+                        "required": false,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "law": {
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "qli_accreditation_id",
+                        "label": "Accreditation ID",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "qli_accreditation_body",
+                        "label": "Accreditation body",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "qli_jurisdiction_country",
+                        "label": "Jurisdiction country",
+                        "required": true,
+                        "type": "country"
+                    },
+                    {
+                        "key": "qli_jurisdiction_state",
+                        "label": "Jurisdiction state",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "qli_accreditation_year",
+                        "label": "Accreditation year (YYYY)",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "abogado": {
+            "tld_data": {
+                "group": "registrant_extra_info",
+                "fields": [
+                    {
+                        "key": "qli_accreditation_id",
+                        "label": "Accreditation ID",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "qli_accreditation_body",
+                        "label": "Accreditation body",
+                        "required": true,
+                        "type": "text"
+                    },
+                    {
+                        "key": "qli_jurisdiction_country",
+                        "label": "Jurisdiction country",
+                        "required": true,
+                        "type": "country"
+                    },
+                    {
+                        "key": "qli_jurisdiction_state",
+                        "label": "Jurisdiction state",
+                        "required": false,
+                        "type": "text"
+                    },
+                    {
+                        "key": "qli_accreditation_year",
+                        "label": "Accreditation year (YYYY)",
+                        "required": true,
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        "xxx": {
+            "tld_data": {
+                "group": "ipr_data",
+                "fields": [
+                    {
+                        "key": "membership_id",
+                        "label": "ICM membership ID",
+                        "required": false,
+                        "type": "text"
+                    }
+                ]
+            }
+        }
+    }
+}
